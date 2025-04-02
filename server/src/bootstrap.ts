@@ -1,5 +1,4 @@
 import { UID, type Core } from '@strapi/strapi';
-import type { Schema } from "@strapi/strapi";
 
 const bootstrap = ({ strapi }: { strapi: Core.Strapi }) => {
   strapi.db.lifecycles.subscribe(async (event) => {
@@ -10,7 +9,7 @@ const bootstrap = ({ strapi }: { strapi: Core.Strapi }) => {
       case "afterDeleteMany":
       case "afterUpdate":
       case "afterUpdateMany":
-        const contentType = strapi.getModel(event.model.uid as unknown as Schema.Attribute.UID); //.UID.ContentType);
+        const contentType = strapi.getModel(event.model.uid as UID.Schema);
         if (!contentType) break;
         const typeNames = getGraphQLTypenamesFromContentType(
           strapi,

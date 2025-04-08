@@ -40,8 +40,8 @@
   "strapi": {
     "kind": "plugin",
     "name": "strapi-plugin-stellate3",
-    "displayName": "Strapi Stellate plugin for strapi v5",
-    "description": ""
+    "displayName": "Stellate Plugin",
+    "description": "Stellate Plugin for Strapi v5"
   },
   "name": "strapi-plugin-stellate3",
   "description": "",
